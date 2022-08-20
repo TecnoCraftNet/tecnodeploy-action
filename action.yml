@@ -13,5 +13,5 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run: curl -F "key=${{ inputs.key }}" -F "file=@${{ inputs.file }}" http://${{ inputs.server }}/uploadFile
+    - run: exit 1
       shell: bash
