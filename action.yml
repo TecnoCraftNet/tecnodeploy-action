@@ -1,0 +1,17 @@
+name: tecnodeploy-action
+description: "Deploya qualcosa all'interno del sistema di Tecno"
+inputs:
+  file:
+    description: "File da deployare"
+    required: true
+  key:
+    description: "Chiave per deployare"
+    required: true
+  server:
+    description: "Server in cui deployare"
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - run: curl -F "key=${{ inputs.key }}" -F "file=@${{ inputs.file }}" http://${{ inputs.server }}/uploadFile
+      shell: bash

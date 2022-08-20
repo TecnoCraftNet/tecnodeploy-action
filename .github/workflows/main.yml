@@ -1,0 +1,16 @@
+on: [ push ]
+
+jobs:
+  test_action:
+    runs-on: ubuntu-latest
+    name: "Test action"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: "Test action"
+        uses: ./
+        id: deploy
+        with:
+          file: "test.txt"
+          key: ${{ secrets.key }}
+          server: ${{ secrets.server }}
