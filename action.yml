@@ -14,7 +14,7 @@ runs:
   using: "composite"
   steps:
     - run: |
-        sudo curl -F "key=${{ inputs.key }}" -F "file=@${{ inputs.file }}" http://${{ inputs.server }}/uploadFile | grep 'success' &> /dev/null
+        sudo curl -F "key=${{ inputs.key }}" -F "file=@${{ inputs.file }}" http://${{ inputs.server }}/uploadFile | grep 'successo' &> /dev/null
         if [ $? == 0 ]; then
            exit 1
         fi
