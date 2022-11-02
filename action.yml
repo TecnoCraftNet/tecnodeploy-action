@@ -14,7 +14,7 @@ runs:
   using: "composite"
   steps:
     - run: |
-        if [[ ${{ inputs.file }} = "" ]]; then
+        if [[ "${{ inputs.file }}" = "" ]]; then
            exit 0
         fi
         sudo curl -F "key=${{ inputs.key }}" -F "file=@${{ inputs.file }}" http://${{ inputs.server }}/uploadFile | grep 'successo' &> /dev/null
