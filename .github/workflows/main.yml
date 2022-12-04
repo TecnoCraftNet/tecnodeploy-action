@@ -14,3 +14,4 @@ jobs:
           file: "test.txt"
           key: ${{ secrets.key }}
           server: ${{ secrets.server }}
+          destination: "test.txt"
