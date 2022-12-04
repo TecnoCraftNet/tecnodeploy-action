@@ -20,7 +20,7 @@ runs:
         if [[ "${{ inputs.file }}" = "" ]]; then
            exit 0
         fi
-        sudo curl -F "key=${{ inputs.key }}" -F "file=@${{ inputs.file }}" -F "destination=@${{ inputs.destination }}" http://${{ inputs.server }}/uploadFile | grep 'successo' &> /dev/null
+        sudo curl -F "key=${{ inputs.key }}" -F "file=@${{ inputs.file }}" -F "destination=${{ inputs.destination }}" http://${{ inputs.server }}/uploadFile | grep 'successo' &> /dev/null
         if [ $? != 0 ]; then
            exit 1
         fi
